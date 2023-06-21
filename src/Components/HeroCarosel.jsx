@@ -34,7 +34,7 @@ const HeroCarosel = () => {
           <div className="carousel-item active">
             <img
               src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8976/1378976-i-7e26d648962a"
-              className="d-block w-100"
+              className="d-block w-100  object-fit-cover"
               alt="..."
             />
           </div>

@@ -4,7 +4,7 @@ const Navabar = () => {
   return (
     <>
       <nav
-        className={`navbar bg-primary navbar-expand-lg navbar-dark  data-bs-theme="dark"`}
+        className={`navbar bg-primary navbar-expand-lg navbar-dark sticky-top  data-bs-theme="dark"`}
       >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
