@@ -3,6 +3,7 @@ import Card from "./Card";
 
 const CardConatiner = () => {
   const [data, setData] = useState({});
+  const [loading, isLoading] = useState(true);
   useEffect(() => {
     fetchData();
   }, []);
@@ -12,8 +13,8 @@ const CardConatiner = () => {
         `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY}`
       );
       const data2 = await data1.json();
-      setData(data2);
-      console.log(data);
+      setData({ data: data2.articles });
+      isLoading(false);
     } catch (error) {
       console.log("Fetching error= " + error);
     }
@@ -24,17 +25,25 @@ const CardConatiner = () => {
       className=" d-flex justify-content-evenly flex-wrap mx-auto py-5"
       style={{ width: "90%" }}
     >
-      {/* {data.articles.map((element, index) => {
-        return (
-          <Card
-            key={index}
-            title={element.title}
-            desc={element.description}
-            link={element.url}
-            image={element.urlToImage}
-          />
-        );
-      })} */}
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        data.data.map((element, index) => {
+          return (
+            <Card
+              key={index}
+              title={element.title ? element.title : ""}
+              desc={element.description ? element.description : ""}
+              link={element.url}
+              image={
+                element.urlToImage
+                  ? element.urlToImage
+                  : "https://images.moneycontrol.com/static-mcnews/2022/10/deal-770x433.jpg"
+              }
+            />
+          );
+        })
+      )}
     </div>
   );
 };

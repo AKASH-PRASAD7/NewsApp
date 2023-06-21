@@ -5,7 +5,7 @@ const HeroCarosel = () => {
     <>
       <div
         id="carouselExampleIndicators"
-        style={{ height: "20rem", overflow: "hidden" }}
+        // style={{ height: "15rem", overflow: "hidden" }}
         className="carousel slide"
       >
         <div className="carousel-indicators">
@@ -37,6 +37,7 @@ const HeroCarosel = () => {
               className="d-block w-100  object-fit-cover"
               alt="..."
             />
+            <h2>hello </h2>
           </div>
           <div className="carousel-item">
             <img src="..." className="d-block w-100" alt="..." />
