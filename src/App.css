@@ -4,5 +4,13 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(221, 211, 236);
+  background-color: rgb(217, 208, 230);
+}
+.carousel-inner img {
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.carousel-inner h3 {
+  text-shadow: 4px 4px 4px #000001;
 }

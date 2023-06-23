@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "../App.css";
 
 const HeroCarosel = () => {
+  const [data, setData] = useState({});
+  const [loading, isLoading] = useState(true);
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    try {
+      const url = process.env.REACT_APP_API_KEY;
+      const data1 = await fetch(
+        `https://newsapi.org/v2/top-headlines?country=us&apiKey=${url}&page=1&pageSize=5`
+      );
+      const data2 = await data1.json();
+      setData({ data: data2.articles });
+      isLoading(false);
+    } catch (error) {
+      console.log("Fetching error= " + error);
+    }
+  };
+
   return (
     <>
       <div
-        id="carouselExampleIndicators"
-        // style={{ height: "15rem", overflow: "hidden" }}
-        className="carousel slide"
+        id="carouselExampleCaptions"
+        className="carousel slide m-2"
+        style={{ height: "60vh" }}
       >
         <div className="carousel-indicators">
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="0"
             className="active"
             aria-current="true"
@@ -19,13 +39,13 @@ const HeroCarosel = () => {
           ></button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="1"
             aria-label="Slide 2"
           ></button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="2"
             aria-label="Slide 3"
           ></button>
@@ -33,23 +53,64 @@ const HeroCarosel = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8976/1378976-i-7e26d648962a"
-              className="d-block w-100  object-fit-cover"
+              src={
+                loading
+                  ? `https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png`
+                  : data.data[0].urlToImage
+              }
+              className="d-block w-100"
               alt="..."
             />
-            <h2>hello </h2>
+            <div className="carousel-caption d-none d-md-block">
+              <h3>
+                {loading ? `loading..` : data.data[0].description.toUpperCase()}
+              </h3>
+            </div>
           </div>
           <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
+            <img
+              src={
+                loading
+                  ? `https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png`
+                  : data.data[1].urlToImage
+              }
+              className="d-block w-100"
+              alt="..."
+            />
+            <div className="carousel-caption d-none d-md-block">
+              <h3>
+                {loading
+                  ? `loading..`
+                  : data.data[1].description
+                  ? data.data[1].description.toUpperCase()
+                  : data.data[1].title.toUpperCase()}
+              </h3>
+            </div>
           </div>
           <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
+            <img
+              src={
+                loading
+                  ? `https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png`
+                  : data.data[3].urlToImage
+              }
+              alt="..."
+            />
+            <div className="carousel-caption d-none d-md-block">
+              <h3>
+                {loading
+                  ? `loading..`
+                  : data.data[4].description
+                  ? data.data[4].description.toUpperCase()
+                  : data.data[4].title.toUpperCase()}
+              </h3>
+            </div>
           </div>
         </div>
         <button
           className="carousel-control-prev"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
         >
           <span
@@ -61,7 +122,7 @@ const HeroCarosel = () => {
         <button
           className="carousel-control-next"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
         >
           <span
