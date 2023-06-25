@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import Loader from "./Loader";
 
 const HeroCarosel = () => {
   const [data, setData] = useState({});
+
   const [loading, isLoading] = useState(true);
   useEffect(() => {
     fetchData();
@@ -15,6 +17,7 @@ const HeroCarosel = () => {
       );
       const data2 = await data1.json();
       setData({ data: data2.articles });
+
       isLoading(false);
     } catch (error) {
       console.log("Fetching error= " + error);
@@ -23,6 +26,7 @@ const HeroCarosel = () => {
 
   return (
     <>
+      {loading && <Loader />}
       <div
         id="carouselExampleCaptions"
         className="carousel slide m-2"
@@ -92,7 +96,7 @@ const HeroCarosel = () => {
               src={
                 loading
                   ? `https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png`
-                  : data.data[3].urlToImage
+                  : data.data[2].urlToImage
               }
               alt="..."
             />
@@ -100,9 +104,9 @@ const HeroCarosel = () => {
               <h3>
                 {loading
                   ? `loading..`
-                  : data.data[4].description
-                  ? data.data[4].description.toUpperCase()
-                  : data.data[4].title.toUpperCase()}
+                  : data.data[2].description
+                  ? data.data[2].description.toUpperCase()
+                  : data.data[2].title.toUpperCase()}
               </h3>
             </div>
           </div>
