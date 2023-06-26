@@ -10,9 +10,12 @@ Welcome to NewsHub! This is a news website that aims to provide users with the l
 
 # Screenshots
 
-![Screenshot 1](/screenshots/screenshot1.png)
-![Screenshot 2](/screenshots/screenshot2.png)
-![Screenshot 3](/screenshots/screenshot3.png)
+![Screenshot 1] <img width="949" alt="1" src="https://github.com/AKASH-PRASAD7/NewsHub/assets/110546856/dc03b685-a676-4a29-b2c5-4ea043f50c13">
+
+![Screenshot 2]<img width="946" alt="2" src="https://github.com/AKASH-PRASAD7/NewsHub/assets/110546856/ee2c1c2b-dbf8-4aa9-bce5-a49780cf568b">
+
+![Screenshot 3]<img width="947" alt="3" src="https://github.com/AKASH-PRASAD7/NewsHub/assets/110546856/c7228819-2051-4585-86d4-533ea852619f">
+
 
 # Technologies Used
 
