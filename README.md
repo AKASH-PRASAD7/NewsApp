@@ -5,7 +5,6 @@ Welcome to NewsHub! This is a news website that aims to provide users with the l
 # Features
 
 - **News Categories:** Users can easily navigate through different news categories to find articles that match their interests.
-- **Search Functionality:** Users can search for specific news articles based on keywords, topics, or specific sources.
 - **Featured Articles:** The homepage showcases featured articles to highlight the most important or trending news stories.
 - **Responsive Design:** The website is optimized for various devices and screen sizes, providing a seamless user experience.
 
@@ -22,14 +21,14 @@ Welcome to NewsHub! This is a news website that aims to provide users with the l
 - HTML5 and CSS3: Standard web development technologies for structuring and styling the website.
 - JavaScript: Used for interactivity and dynamic content.
 - Bootstrap: A CSS framework used for responsive design and layout.
-- Backend Technologies: Mention backend technologies if applicable, such as Node.js, Express, or a CMS (Content Management System) like WordPress.
 
 ## Installation
 
-- Clone the repository: git clone https://github.com/AKASH-PRASAD7/NewsApp.git
-- Navigate to the project directory: cd NewsApp
-- Install dependencies: npm install
-- Start the app: npm start
+- Note Add your own NewsApI key
+- Clone the repository: git clone `https://github.com/AKASH-PRASAD7/NewsApp.git`
+- Navigate to the project directory: `cd NewsApp`
+- Install dependencies: `npm install`
+- Start the app: `npm start`
 
 # Contributing
 

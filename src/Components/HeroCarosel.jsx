@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
-import Loader from "./Loader";
 
 const HeroCarosel = () => {
   const [data, setData] = useState({});
@@ -26,10 +25,9 @@ const HeroCarosel = () => {
 
   return (
     <>
-      {loading && <Loader />}
       <div
         id="carouselExampleCaptions"
-        className="carousel slide m-2"
+        className="carousel slide m-2 d-none d-lg-block"
         style={{ height: "60vh" }}
       >
         <div className="carousel-indicators">

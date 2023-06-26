@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(217, 208, 230);
+  background-color: rgb(55, 50, 63);
 }
 .carousel-inner img {
   width: 100%;
@@ -12,6 +12,16 @@ body {
   object-fit: cover;
   border-radius: 25px;
 }
+
 .carousel-inner h3 {
   text-shadow: 4px 4px 4px #000001;
+}
+.text1 {
+  color: rgb(167, 154, 129);
+}
+.top {
+  position: relative;
+}
+.source {
+  position: absolute;
 }
