@@ -30,6 +30,8 @@ Welcome to NewsHub! This is a news website that aims to provide users with the l
 - Note Add your own NewsApI key
 - Clone the repository: git clone `https://github.com/AKASH-PRASAD7/NewsApp.git`
 - Navigate to the project directory: `cd NewsApp`
+- Setup environment variables: `touch .env`
+- Add variable: `REACT_APP_API_KEY=<YOUR-NEWSAPI-KEY>`
 - Install dependencies: `npm install`
 - Start the app: `npm start`
 
